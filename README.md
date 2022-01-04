@@ -1,19 +1,21 @@
-### Installation
+### Transacter usage
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is an example of how you can use transacter.sh script to send transactions between ETH and UMEE._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/bartosian/helper_scripts.git
    ```
-3. Install NPM packages
+2. Add file to the same directory with amounts to send. Make sure each amount is on new line and toital number of them is equal to "count" option
    ```sh
-   npm install
+   touch name_of_file.txt
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Make transacter file executable: 
+   ```sh
+   chmod +x transacter.sh
    ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+4. Update eth_rpc, eth_pk in transacter file.
+5. Start transacter executing following command: 
+   ```sh
+   ./transacter.sh -e <ETH ADDRESS> -u <UMEE ADDRESS> -c <COUNT OF TXs> -f <NAME OF FILE WITH AMOUNTS> -d <DIRECTION OF TXs> -t <DELAY BETWEEN TXS>
+   ```
